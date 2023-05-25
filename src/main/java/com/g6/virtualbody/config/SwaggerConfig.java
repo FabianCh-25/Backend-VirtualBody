@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket apiDocket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.go.virtualbody.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("com.g6.virtualbody.controllers"))
                 .paths(PathSelectors.any())
                 .build();
     }

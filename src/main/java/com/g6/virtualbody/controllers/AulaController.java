@@ -29,4 +29,20 @@ public class AulaController {
             return m.map(x,AulaDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){
+        aS.delete(id);
+    }
+    @GetMapping("/{id}")
+    public AulaDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m= new ModelMapper();
+        AulaDTO dto=m.map(aS.ListId(id),AulaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void update(@RequestBody AulaDTO dto){
+        ModelMapper m=new ModelMapper();
+        Aula a=m.map(dto,Aula.class);
+        aS.insert(a);
+    }
 }

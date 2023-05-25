@@ -22,4 +22,16 @@ public class AulaServiceImplement implements IAulaService {
     public List<Aula> list() {
         return aR.findAll();
     }
+
+    @Override
+    public void delete(int idAula) {
+        aR.deleteById(idAula);
+    }
+
+    @Override
+    public Aula ListId(int idAula) {
+        return aR.findById(idAula).orElse(new Aula());
+    }
+
+
 }
