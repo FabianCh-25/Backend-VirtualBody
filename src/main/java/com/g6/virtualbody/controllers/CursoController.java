@@ -28,6 +28,24 @@ public class CursoController {
             ModelMapper m=new ModelMapper();
             return m.map(x,CursoDTO.class);
         }).collect(Collectors.toList());
-
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){
+        cs.delete(id);
+    }
+   @GetMapping("/{id}")
+    public CursoDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m= new ModelMapper();
+        CursoDTO dto=m.map(cs.listId(id),CursoDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void update(@RequestBody CursoDTO dto){
+        ModelMapper m= new ModelMapper();
+        Curso c=m.map(dto,Curso.class);
+        cs.insert(c);
+    }
+
+
 }
