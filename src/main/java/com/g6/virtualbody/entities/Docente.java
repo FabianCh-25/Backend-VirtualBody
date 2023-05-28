@@ -10,13 +10,25 @@ public class Docente {
     private int idDocente;
     @Column(name="nombre", length = 50, nullable = false)
     private String nombre;
+    @Column(name="apellidoDocente", length = 50, nullable = false)
+    private String apellidoDocente;
+    @Column(name = "correoDocente", length = 60, nullable = false)
+    private String correoDocente;
+    @Column(name = "claveDocente", length = 40, nullable = false)
+    private String claveDocente;
+    @Column(name = "telefonoDocente", length = 9, nullable = false)
+    private int telefonoDocente;
 
     public Docente() {
     }
 
-    public Docente(int idDocente, String nombre) {
+    public Docente(int idDocente, String nombre, String apellidoDocente, String correoDocente, String claveDocente, int telefonoDocente) {
         this.idDocente = idDocente;
         this.nombre = nombre;
+        this.apellidoDocente = apellidoDocente;
+        this.correoDocente = correoDocente;
+        this.claveDocente = claveDocente;
+        this.telefonoDocente = telefonoDocente;
     }
 
     public int getIdDocente() {
@@ -33,5 +45,37 @@ public class Docente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellidoDocente() {
+        return apellidoDocente;
+    }
+
+    public void setApellidoDocente(String apellidoDocente) {
+        this.apellidoDocente = apellidoDocente;
+    }
+
+    public String getCorreoDocente() {
+        return correoDocente;
+    }
+
+    public void setCorreoDocente(String correoDocente) {
+        this.correoDocente = correoDocente;
+    }
+
+    public String getClaveDocente() {
+        return claveDocente;
+    }
+
+    public void setClaveDocente(String claveDocente) {
+        this.claveDocente = claveDocente;
+    }
+
+    public int getTelefonoDocente() {
+        return telefonoDocente;
+    }
+
+    public void setTelefonoDocente(int telefonoDocente) {
+        this.telefonoDocente = telefonoDocente;
     }
 }
