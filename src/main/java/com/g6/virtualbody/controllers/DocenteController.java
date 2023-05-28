@@ -3,7 +3,6 @@ package com.g6.virtualbody.controllers;
 import com.g6.virtualbody.dtos.DocenteDTO;
 import com.g6.virtualbody.entities.Docente;
 import com.g6.virtualbody.services.IDocenteService;
-import io.swagger.models.Model;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +38,7 @@ public class DocenteController {
         DocenteDTO dto = m.map(dS.ListId(id), DocenteDTO.class);
         return dto;
     }
+    @PutMapping
     public void update(@RequestBody DocenteDTO dto){
         ModelMapper m = new ModelMapper();
         Docente d = m.map(dto, Docente.class);
