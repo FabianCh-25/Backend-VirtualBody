@@ -10,6 +10,8 @@ public class EstudianteXActividadDTO {
     private Actividad act;
 
     private Estudiante estudiante;
+    private  int calificacion;
+
 
     public int getIdExA() {
         return idExA;
@@ -33,5 +35,13 @@ public class EstudianteXActividadDTO {
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 }

@@ -14,8 +14,17 @@ public class EstudianteXActividad {
     @ManyToOne
     @JoinColumn(name = "idEstudiante")
     private Estudiante estudiante;
+    @Column(name = "calificacion",nullable = false)
+    private  int calificacion;
 
     public EstudianteXActividad() {
+    }
+
+    public EstudianteXActividad(int idExA, Actividad act, Estudiante estudiante, int calificacion) {
+        this.idExA = idExA;
+        this.act = act;
+        this.estudiante = estudiante;
+        this.calificacion = calificacion;
     }
 
     public int getIdExA() {
@@ -40,5 +49,13 @@ public class EstudianteXActividad {
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 }
