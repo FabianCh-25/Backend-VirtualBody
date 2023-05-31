@@ -10,7 +10,7 @@ public class Aula{
     private int idAula;
     @Column(name = "seccionAula",length = 4, nullable = false)
     private String seccionAula;
-    @Column(name = "seccionAula",length = 3, nullable = false)
+    @Column(name = "vacanteAula",length = 3, nullable = false)
     private String vacanteAula;
 
     public Aula() {

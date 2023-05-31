@@ -14,7 +14,7 @@ public class SwaggerConfig {
 
     @Bean
     public Docket apiDocket(){
-        return new Docket(DocumentationType.SPRING_WEB.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.g6.virtualbody.controllers"))
                 .paths(PathSelectors.any())
