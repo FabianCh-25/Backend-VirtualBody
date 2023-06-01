@@ -16,7 +16,7 @@ public class CursoServiceImplement implements ICursoService {
     private ICursoRepository cR;
 
     @Override
-    public void insert(Curso curso){
+    public void insert(Curso curso) {
         cR.save(curso);
     }
 
@@ -26,12 +26,12 @@ public class CursoServiceImplement implements ICursoService {
     }
 
     @Override
-    public void delete(int idCurso){
+    public void delete(int idCurso) {
         cR.deleteById(idCurso);
     }
-    @Override
-    public Curso listId(int idCurso){
-        return cR.findById(idCurso).orElse(new Curso());
 
+    @Override
+    public Curso listId(int idCurso) {
+        return cR.findById(idCurso).orElse(new Curso());
     }
 }
