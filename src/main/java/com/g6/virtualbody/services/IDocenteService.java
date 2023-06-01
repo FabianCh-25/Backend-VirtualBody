@@ -9,4 +9,5 @@ public interface IDocenteService {
     List<Docente> list();
     public void delete(int idDocente);
     Docente ListId(int idDocente);
+    List<Docente> find(String nombre);
 }

@@ -44,4 +44,11 @@ public class DocenteController {
         Docente d = m.map(dto, Docente.class);
         dS.insert(d);
     }
+    @PostMapping("/buscarNombre")
+    public List<DocenteDTO> searchName(@RequestBody String nombre) {
+        return dS.find(nombre).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, DocenteDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
