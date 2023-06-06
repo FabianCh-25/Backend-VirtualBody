@@ -1,13 +1,16 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
+import com.g6.virtualbody.dtos.DocenteDTO;
 import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.services.IDetalleMatriculaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -41,5 +44,14 @@ public class DetalleMatriculaController {
         ModelMapper m = new ModelMapper();
         DetalleMatricula dm = m.map(dto, DetalleMatricula.class);
         mS.insert(dm);
+    }
+    @PostMapping("/buscarEntreFechas")
+    public List<DetalleMatriculaDTO> searchDate(@RequestBody Map<String, LocalDate> fechas){
+        LocalDate fechaInicio = fechas.get("fechaInicio");
+        LocalDate fechaFin = fechas.get("fechaFin");
+        return mS.findDate(fechaInicio,fechaFin).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, DetalleMatriculaDTO.class);
+        }).collect(Collectors.toList());
     }
 }

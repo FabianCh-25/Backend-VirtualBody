@@ -6,6 +6,7 @@ import com.g6.virtualbody.services.IDetalleMatriculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 @Service
 public class DetalleMatriculaServiceImplement implements IDetalleMatriculaService {
@@ -30,5 +31,10 @@ public class DetalleMatriculaServiceImplement implements IDetalleMatriculaServic
     @Override
     public DetalleMatricula listId(int idDetalleMatricula) {
         return mR.findById(idDetalleMatricula).orElse(new DetalleMatricula());
+    }
+
+    @Override
+    public List<DetalleMatricula> findDate(LocalDate fechaInicio, LocalDate fechaFin) {
+        return mR.detalleFecha(fechaInicio,fechaFin);
     }
 }
