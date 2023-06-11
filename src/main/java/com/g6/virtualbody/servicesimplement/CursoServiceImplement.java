@@ -10,10 +10,10 @@ import java.util.List;
 
 @Service
 public class CursoServiceImplement implements ICursoService {
+
     @Autowired
 
     private ICursoRepository cR;
-
 
     @Override
     public void insert(Curso curso) {

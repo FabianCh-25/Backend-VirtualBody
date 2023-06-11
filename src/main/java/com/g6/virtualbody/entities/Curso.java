@@ -1,20 +1,19 @@
 package com.g6.virtualbody.entities;
 
-import javax.persistence.*;
 
+import javax.persistence.*;
 @Entity
 @Table(name = "cursos")
 public class Curso {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
-    @Column(name = "codeCurso",length = 3,nullable = false)
+@Column(name = "codeCurso",length = 3,nullable = false)
     private String codeCurso;
-    @Column(name = "nameCurso",length = 30,nullable = false)
+@Column(name = "nameCurso",length = 30,nullable = false)
     private String nameCurso;
-    @Column(name ="descriptionCurso", length = 100, nullable = false)
+@Column(name ="descriptionCurso", length = 100, nullable = false)
     private String descriptionCurso;
 
     public Curso(){

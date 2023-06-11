@@ -13,13 +13,12 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/cursos")
 public class CursoController {
-
     @Autowired
     private ICursoService cs;
     @PostMapping
     public void insert(@RequestBody CursoDTO dto){
         ModelMapper m=new ModelMapper();
-        Curso c=m.map(dto, Curso.class);
+        Curso c=m.map(dto,Curso.class);
         cs.insert(c);
     }
     @GetMapping
@@ -35,7 +34,7 @@ public class CursoController {
     public void delete(@PathVariable("id")Integer id){
         cs.delete(id);
     }
-    @GetMapping("/{id}")
+   @GetMapping("/{id}")
     public CursoDTO listId(@PathVariable("id")Integer id){
         ModelMapper m= new ModelMapper();
         CursoDTO dto=m.map(cs.listId(id),CursoDTO.class);

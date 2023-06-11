@@ -1,5 +1,7 @@
 package com.g6.virtualbody.dtos;
 
+
+
 public class CursoDTO {
 
     private int idCurso;
