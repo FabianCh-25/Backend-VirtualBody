@@ -38,7 +38,7 @@ public class DocenteController {
         DocenteDTO dto = m.map(dS.ListId(id), DocenteDTO.class);
         return dto;
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public void update(@RequestBody DocenteDTO dto){
         ModelMapper m = new ModelMapper();
         Docente d = m.map(dto, Docente.class);
