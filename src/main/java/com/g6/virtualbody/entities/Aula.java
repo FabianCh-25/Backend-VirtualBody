@@ -10,13 +10,13 @@ public class Aula {
     private int idAula;
     @Column(name = "seccionAula", length = 4, nullable = false)
     private String seccionAula;
-    @Column(name = "vacanteAula", length = 3, nullable = false)
-    private String vacanteAula;
+    @Column(name = "vacanteAula", nullable = false)
+    private int vacanteAula;
 
     public Aula() {
     }
 
-    public Aula(int idAula, String seccionAula, String vacanteAula) {
+    public Aula(int idAula, String seccionAula, int vacanteAula) {
         this.idAula = idAula;
         this.seccionAula = seccionAula;
         this.vacanteAula = vacanteAula;
@@ -38,11 +38,11 @@ public class Aula {
         this.seccionAula = seccionAula;
     }
 
-    public String getVacanteAula() {
+    public int getVacanteAula() {
         return vacanteAula;
     }
 
-    public void setVacanteAula(String vacanteAula) {
+    public void setVacanteAula(int vacanteAula) {
         this.vacanteAula = vacanteAula;
     }
 }
