@@ -3,14 +3,14 @@ package com.g6.virtualbody.entities;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Aulas")
+@Table(name = "Aulas")
 public class Aula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAula;
-    @Column(name = "seccionAula",length = 4, nullable = false)
+    @Column(name = "seccionAula", length = 4, nullable = false)
     private String seccionAula;
-    @Column(name = "vacanteAula",length = 3, nullable = false)
+    @Column(name = "vacanteAula", length = 3, nullable = false)
     private String vacanteAula;
 
     public Aula() {

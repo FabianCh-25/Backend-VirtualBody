@@ -38,10 +38,17 @@ public class DocenteController {
         DocenteDTO dto = m.map(dS.ListId(id), DocenteDTO.class);
         return dto;
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public void update(@RequestBody DocenteDTO dto){
         ModelMapper m = new ModelMapper();
         Docente d = m.map(dto, Docente.class);
         dS.insert(d);
+    }
+    @GetMapping("/buscarNombre")
+    public List<DocenteDTO> searchName(@RequestParam String nombre) {
+        return dS.find(nombre).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, DocenteDTO.class);
+        }).collect(Collectors.toList());
     }
 }

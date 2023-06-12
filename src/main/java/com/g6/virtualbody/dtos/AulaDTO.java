@@ -1,9 +1,12 @@
 package com.g6.virtualbody.dtos;
 
+import javax.persistence.Column;
+
 public class AulaDTO {
-private int idAula;
+    private int idAula;
     private String seccionAula;
     private String vacanteAula;
+
     public int getIdAula() {
         return idAula;
     }

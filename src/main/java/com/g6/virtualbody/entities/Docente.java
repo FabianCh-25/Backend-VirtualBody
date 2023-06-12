@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "Docentes")
 public class Docente {
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int idDocente;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idDocente;
     @Column(name="nombre", length = 50, nullable = false)
     private String nombre;
     @Column(name="apellidoDocente", length = 50, nullable = false)

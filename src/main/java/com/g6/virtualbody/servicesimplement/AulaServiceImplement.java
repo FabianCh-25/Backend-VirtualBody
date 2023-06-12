@@ -14,11 +14,13 @@ public class AulaServiceImplement implements IAulaService {
     private IAulaRepository aR;
     @Override
     public void insert(Aula aula) {
-        aR.save(aula);    }
+        aR.save(aula);
+    }
 
     @Override
     public List<Aula> list() {
-        return aR.findAll();    }
+        return aR.findAll();
+    }
 
     @Override
     public void delete(int idAula) {
@@ -27,5 +29,6 @@ public class AulaServiceImplement implements IAulaService {
 
     @Override
     public Aula ListId(int idAula) {
-        return aR.findById(idAula).orElse(new Aula());    }
+        return aR.findById(idAula).orElse(new Aula());
+    }
 }

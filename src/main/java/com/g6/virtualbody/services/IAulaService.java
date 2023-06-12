@@ -8,5 +8,5 @@ public interface IAulaService {
     public void insert(Aula aula);
     List<Aula> list();
     public void delete(int idAula);
-    Aula ListId(int idAula);
+    public Aula ListId(int idAula);
 }
