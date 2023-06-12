@@ -12,7 +12,6 @@ import java.util.List;
 public class DocenteServiceImplement implements IDocenteService {
     @Autowired
     private IDocenteRepository dR;
-
     @Override
     public void insert(Docente docente) {
         dR.save(docente);
@@ -32,4 +31,8 @@ public class DocenteServiceImplement implements IDocenteService {
     public Docente ListId(int idDocente) {
         return dR.findById(idDocente).orElse(new Docente());
     }
+
+    @Override
+    public List<Docente> find(String nombre) {
+        return dR.buscarNombre(nombre);    }
 }

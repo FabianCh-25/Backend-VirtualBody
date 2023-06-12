@@ -10,7 +10,6 @@ public class ActividadDTO {
     private LocalDate fechaPublicacion;
     private LocalDate fechaEntrega;
 
-
     public int getIdActividad() {
         return idActividad;
     }

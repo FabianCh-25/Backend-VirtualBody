@@ -1,5 +1,7 @@
 package com.g6.virtualbody.dtos;
 
+import javax.persistence.Column;
+
 public class DocenteDTO {
     private int idDocente;
     private String nombre;
