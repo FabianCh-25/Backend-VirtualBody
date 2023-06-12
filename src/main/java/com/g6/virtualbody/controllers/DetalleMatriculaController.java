@@ -1,7 +1,6 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
-import com.g6.virtualbody.dtos.DocenteDTO;
 import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.services.IDetalleMatriculaService;
 import org.modelmapper.ModelMapper;
@@ -39,7 +38,7 @@ public class DetalleMatriculaController {
         DetalleMatriculaDTO dto = m.map(mS.listId(id), DetalleMatriculaDTO.class);
         return dto;
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public void update(@RequestBody DetalleMatriculaDTO dto){
         ModelMapper m = new ModelMapper();
         DetalleMatricula dm = m.map(dto, DetalleMatricula.class);
