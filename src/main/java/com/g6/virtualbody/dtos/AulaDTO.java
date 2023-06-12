@@ -5,7 +5,7 @@ import javax.persistence.Column;
 public class AulaDTO {
     private int idAula;
     private String seccionAula;
-    private String vacanteAula;
+    private int vacanteAula;
 
     public int getIdAula() {
         return idAula;
@@ -23,11 +23,11 @@ public class AulaDTO {
         this.seccionAula = seccionAula;
     }
 
-    public String getVacanteAula() {
+    public int getVacanteAula() {
         return vacanteAula;
     }
 
-    public void setVacanteAula(String vacanteAula) {
+    public void setVacanteAula(int vacanteAula) {
         this.vacanteAula = vacanteAula;
     }
 }
