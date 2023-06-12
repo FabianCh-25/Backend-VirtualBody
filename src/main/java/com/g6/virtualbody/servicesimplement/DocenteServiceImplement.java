@@ -34,6 +34,5 @@ public class DocenteServiceImplement implements IDocenteService {
 
     @Override
     public List<Docente> find(String nombre) {
-        return dR.buscarNombre(nombre);
-    }
+        return dR.buscarNombre(nombre);    }
 }

@@ -1,6 +1,7 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
+import com.g6.virtualbody.dtos.DocenteDTO;
 import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.services.IDetalleMatriculaService;
 import org.modelmapper.ModelMapper;
@@ -14,7 +15,9 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/detallesMatriculas")
+
 public class DetalleMatriculaController {
+
     @Autowired
     private IDetalleMatriculaService mS;
     @PostMapping
@@ -38,7 +41,7 @@ public class DetalleMatriculaController {
         DetalleMatriculaDTO dto = m.map(mS.listId(id), DetalleMatriculaDTO.class);
         return dto;
     }
-    @PutMapping("/{id}")
+    @PutMapping
     public void update(@RequestBody DetalleMatriculaDTO dto){
         ModelMapper m = new ModelMapper();
         DetalleMatricula dm = m.map(dto, DetalleMatricula.class);

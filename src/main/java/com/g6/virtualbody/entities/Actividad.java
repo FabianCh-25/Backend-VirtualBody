@@ -42,6 +42,10 @@ public class Actividad {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -64,9 +68,5 @@ public class Actividad {
 
     public void setFechaEntrega(LocalDate fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 }

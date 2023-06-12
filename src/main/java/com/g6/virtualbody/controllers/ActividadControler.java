@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Actividades")
+@RequestMapping("/actividades")
 public class ActividadControler {
     @Autowired
     private IActividadService atS;

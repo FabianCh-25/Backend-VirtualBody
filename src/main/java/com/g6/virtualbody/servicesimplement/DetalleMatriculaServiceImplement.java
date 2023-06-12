@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 @Service
+
 public class DetalleMatriculaServiceImplement implements IDetalleMatriculaService {
     @Autowired
     private IDetalleMatriculaRepository mR;
-
     @Override
     public void insert(DetalleMatricula detalleMatricula) {
         mR.save(detalleMatricula);
@@ -26,6 +26,7 @@ public class DetalleMatriculaServiceImplement implements IDetalleMatriculaServic
     @Override
     public void delete(int idDetalleMatricula) {
         mR.deleteById(idDetalleMatricula);
+
     }
 
     @Override

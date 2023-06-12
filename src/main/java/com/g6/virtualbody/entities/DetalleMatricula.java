@@ -1,8 +1,6 @@
 package com.g6.virtualbody.entities;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-
 @Entity
 @Table(name = "detallesMatriculas")
 public class DetalleMatricula {
@@ -14,22 +12,14 @@ public class DetalleMatricula {
     @ManyToOne
     @JoinColumn(name = "idDocente")
     private Docente docente;
-    @ManyToOne
-    @JoinColumn(name = "idAula")
-    private Aula aula;
-    @ManyToOne
-    @JoinColumn(name = "idCurso")
-    private Curso curso;
 
     public DetalleMatricula() {
     }
 
-    public DetalleMatricula(int idDetalleMatricula, LocalDate fechaInscripcion, Docente docente, Aula aula, Curso curso) {
+    public DetalleMatricula(int idDetalleMatricula, LocalDate fechaInscripcion, Docente docente) {
         this.idDetalleMatricula = idDetalleMatricula;
         this.fechaInscripcion = fechaInscripcion;
         this.docente = docente;
-        this.aula = aula;
-        this.curso = curso;
     }
 
     public int getIdDetalleMatricula() {
@@ -54,21 +44,5 @@ public class DetalleMatricula {
 
     public void setDocente(Docente docente) {
         this.docente = docente;
-    }
-
-    public Aula getAula() {
-        return aula;
-    }
-
-    public void setAula(Aula aula) {
-        this.aula = aula;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
     }
 }
