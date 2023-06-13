@@ -3,6 +3,7 @@ package com.g6.virtualbody.dtos;
 import com.g6.virtualbody.entities.Aula;
 import com.g6.virtualbody.entities.Curso;
 import com.g6.virtualbody.entities.Docente;
+import com.g6.virtualbody.entities.Matricula;
 
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class DetalleMatriculaDTO {
     private Docente docente;
     private Aula aula;
     private Curso curso;
+    private Matricula matricula;
 
     public int getIdDetalleMatricula() {
         return idDetalleMatricula;
@@ -52,5 +54,13 @@ public class DetalleMatriculaDTO {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
     }
 }

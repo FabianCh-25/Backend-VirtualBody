@@ -18,16 +18,20 @@ public class DetalleMatricula {
     @ManyToOne
     @JoinColumn(name = "idCurso")
     private Curso curso;
+    @ManyToOne
+    @JoinColumn(name = "idMatricula")
+    private Matricula matricula;
 
     public DetalleMatricula() {
     }
 
-    public DetalleMatricula(int idDetalleMatricula, LocalDate fechaInscripcion, Docente docente, Aula aula, Curso curso) {
+    public DetalleMatricula(int idDetalleMatricula, LocalDate fechaInscripcion, Docente docente, Aula aula, Curso curso, Matricula matricula) {
         this.idDetalleMatricula = idDetalleMatricula;
         this.fechaInscripcion = fechaInscripcion;
         this.docente = docente;
         this.aula = aula;
         this.curso = curso;
+        this.matricula = matricula;
     }
 
     public int getIdDetalleMatricula() {
@@ -68,5 +72,13 @@ public class DetalleMatricula {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
     }
 }
