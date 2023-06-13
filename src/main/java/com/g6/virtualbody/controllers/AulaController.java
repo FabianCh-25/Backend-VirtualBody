@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/aula")
+@RequestMapping("/Aulas")
 public class AulaController {
     @Autowired
     private IAulaService aS;
