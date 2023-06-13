@@ -10,16 +10,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class swaggerConfig {
-
+public class SwaggerConfig {
     @Bean
-public Docket apiDocket(){
-
+    public Docket apiDocket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.g6.virtualbody.controllers"))
                 .paths(PathSelectors.any())
                 .build();
     }
-
 }
