@@ -4,7 +4,7 @@ import com.g6.virtualbody.entities.Estudiante;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface IEstudianteService {
     public void insert(Estudiante estudiante);
     List<Estudiante> list();

@@ -9,8 +9,6 @@ public class Estudiante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int idEstudiante;
-    @Column(name = "codigoEstudiante", length = 35, nullable = true)
-    private String codigoEstudiante;
     @Column(name = "nombreEstudiante", length = 35, nullable = false)
     private String nombreEstudiante;
     @Column(name = "apellidoEstudiante", length = 35, nullable = false)
@@ -19,7 +17,7 @@ public class Estudiante {
     private String correoEstudiante;
     @Column(name = "claveEstudiante", length = 35, nullable = false)
     private String claveEstudiante;
-    @Column(name = "String", length = 35, nullable = false)
+    @Column(name = "telefonoEstudiante", length = 35, nullable = false)
     private String telefonoEstudiante;
 
 
@@ -42,14 +40,6 @@ public class Estudiante {
 
     public void setIdEstudiante(int idEstudiante) {
         this.idEstudiante = idEstudiante;
-    }
-
-    public String getCodigoEstudiante() {
-        return codigoEstudiante;
-    }
-
-    public void setCodigoEstudiante(String codigoEstudiante) {
-        this.codigoEstudiante = codigoEstudiante;
     }
 
     public String getNombreEstudiante() {
