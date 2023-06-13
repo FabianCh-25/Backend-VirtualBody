@@ -2,11 +2,11 @@ package com.g6.virtualbody.dtos;
 
 public class EstudianteDTO {
     private int idEstudiante;
-    private String nombreEstudiante;
-    private String apellidoEstudiante;
-    private String correoEstudiante;
-    private String claveEstudiante;
-    private String telefonoEstudiante;
+    private String NombreEstudiante;
+    private String ApellidoEstudiante;
+    private String CorreoEstudiante;
+    private String ClaveEstudiante;
+    private String TelefonoEstudiante;
 
     public int getIdEstudiante() {
         return idEstudiante;
@@ -17,42 +17,42 @@ public class EstudianteDTO {
     }
 
     public String getNombreEstudiante() {
-        return nombreEstudiante;
+        return NombreEstudiante;
     }
 
     public void setNombreEstudiante(String nombreEstudiante) {
-        this.nombreEstudiante = nombreEstudiante;
+        NombreEstudiante = nombreEstudiante;
     }
 
     public String getApellidoEstudiante() {
-        return apellidoEstudiante;
+        return ApellidoEstudiante;
     }
 
     public void setApellidoEstudiante(String apellidoEstudiante) {
-        this.apellidoEstudiante = apellidoEstudiante;
+        ApellidoEstudiante = apellidoEstudiante;
     }
 
     public String getCorreoEstudiante() {
-        return correoEstudiante;
+        return CorreoEstudiante;
     }
 
     public void setCorreoEstudiante(String correoEstudiante) {
-        this.correoEstudiante = correoEstudiante;
+        CorreoEstudiante = correoEstudiante;
     }
 
     public String getClaveEstudiante() {
-        return claveEstudiante;
+        return ClaveEstudiante;
     }
 
     public void setClaveEstudiante(String claveEstudiante) {
-        this.claveEstudiante = claveEstudiante;
+        ClaveEstudiante = claveEstudiante;
     }
 
     public String getTelefonoEstudiante() {
-        return telefonoEstudiante;
+        return TelefonoEstudiante;
     }
 
     public void setTelefonoEstudiante(String telefonoEstudiante) {
-        this.telefonoEstudiante = telefonoEstudiante;
+        TelefonoEstudiante = telefonoEstudiante;
     }
 }

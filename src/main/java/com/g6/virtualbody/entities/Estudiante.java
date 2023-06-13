@@ -9,29 +9,28 @@ public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEstudiante;
-    @Column(name = "nombreEstudiante", length = 20, nullable = false)
-    private String nombreEstudiante;
-    @Column(name = "apellidoEstudiante", length = 20, nullable = false)
-    private String apellidoEstudiante;
-    @Column(name = "correoEstudiante", length = 35, nullable = false)
-    private String correoEstudiante;
-    @Column(name = "claveEstudiante", length = 15, nullable = false)
-    private String claveEstudiante;
-    @Column(name = "String", length = 15, nullable = false)
-    private String telefonoEstudiante;
+    @Column(name = "NombreEstudiante", length = 20, nullable = false)
+    private String NombreEstudiante;
+    @Column(name = "ApellidoEstudiante", length = 20, nullable = false)
+    private String ApellidoEstudiante;
+    @Column(name = "CorreoEstudiante", length = 35, nullable = false)
+    private String CorreoEstudiante;
+    @Column(name = "ClaveEstudiante", length = 15, nullable = false)
+    private String ClaveEstudiante;
+    @Column(name = "TelefonoEstudiante", length = 15, nullable = false)
+    private String TelefonoEstudiante;
 
 
     public Estudiante() {
     }
 
-    public Estudiante(int idEstudiante, String nombreEstudiante, String apellidoEstudiante,
-                      String correoEstudiante, String claveEstudiante, String telefonoEstudiante) {
+    public Estudiante(int idEstudiante, String nombreEstudiante, String apellidoEstudiante, String correoEstudiante, String claveEstudiante, String telefonoEstudiante) {
         this.idEstudiante = idEstudiante;
-        this.nombreEstudiante = nombreEstudiante;
-        this.apellidoEstudiante = apellidoEstudiante;
-        this.correoEstudiante = correoEstudiante;
-        this.claveEstudiante = claveEstudiante;
-        this.telefonoEstudiante = telefonoEstudiante;
+        NombreEstudiante = nombreEstudiante;
+        ApellidoEstudiante = apellidoEstudiante;
+        CorreoEstudiante = correoEstudiante;
+        ClaveEstudiante = claveEstudiante;
+        TelefonoEstudiante = telefonoEstudiante;
     }
 
     public int getIdEstudiante() {
@@ -43,42 +42,42 @@ public class Estudiante {
     }
 
     public String getNombreEstudiante() {
-        return nombreEstudiante;
+        return NombreEstudiante;
     }
 
     public void setNombreEstudiante(String nombreEstudiante) {
-        this.nombreEstudiante = nombreEstudiante;
+        NombreEstudiante = nombreEstudiante;
     }
 
     public String getApellidoEstudiante() {
-        return apellidoEstudiante;
+        return ApellidoEstudiante;
     }
 
     public void setApellidoEstudiante(String apellidoEstudiante) {
-        this.apellidoEstudiante = apellidoEstudiante;
+        ApellidoEstudiante = apellidoEstudiante;
     }
 
     public String getCorreoEstudiante() {
-        return correoEstudiante;
+        return CorreoEstudiante;
     }
 
     public void setCorreoEstudiante(String correoEstudiante) {
-        this.correoEstudiante = correoEstudiante;
+        CorreoEstudiante = correoEstudiante;
     }
 
     public String getClaveEstudiante() {
-        return claveEstudiante;
+        return ClaveEstudiante;
     }
 
     public void setClaveEstudiante(String claveEstudiante) {
-        this.claveEstudiante = claveEstudiante;
+        ClaveEstudiante = claveEstudiante;
     }
 
     public String getTelefonoEstudiante() {
-        return telefonoEstudiante;
+        return TelefonoEstudiante;
     }
 
     public void setTelefonoEstudiante(String telefonoEstudiante) {
-        this.telefonoEstudiante = telefonoEstudiante;
+        TelefonoEstudiante = telefonoEstudiante;
     }
 }
