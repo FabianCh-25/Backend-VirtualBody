@@ -3,7 +3,7 @@ package com.g6.virtualbody.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "estudiantes")
+@Table(name = "estudiante")
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
