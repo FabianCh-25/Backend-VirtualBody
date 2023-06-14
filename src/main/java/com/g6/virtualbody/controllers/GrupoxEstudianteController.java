@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/GruposxEstudiantes")
+@RequestMapping("/gruposxestudiante")
 public class GrupoxEstudianteController {
 @Autowired
     private IGrupoxEstudianteService gxeS;

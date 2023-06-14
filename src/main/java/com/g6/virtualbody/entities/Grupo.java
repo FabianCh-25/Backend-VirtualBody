@@ -3,16 +3,14 @@ package com.g6.virtualbody.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="grupos")
+@Table(name="grupo")
 public class Grupo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGrupo;
-    @Column(name = "nombreGrupo", length = 20, nullable = false)
-
+    @Column(name = "nombreGrupo", length = 30, nullable = false)
     private String nombreGrupo;
     @Column(name = "descripcionGrupo", length = 30, nullable = false)
-
     private String descripcionGrupo;
     public Grupo(){
 
