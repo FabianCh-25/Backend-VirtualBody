@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="GrupoxEstudiante")
+@Table(name="gruposxEstudiantes")
 public class GrupoxEstudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,10 @@ public class GrupoxEstudiante {
     private LocalDate fechaacceso;
 
     @ManyToOne
-    @JoinColumn(name = "Grupo",nullable = false)
-
+    @JoinColumn(name = "idGrupo")
     private Grupo grupo;
     @ManyToOne
-    @JoinColumn(name = "Estudiante",nullable = false)
+    @JoinColumn(name = "idEstudiante")
 
     private Estudiante estudiante;
 

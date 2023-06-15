@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/GruposxEstudiantes")
+@RequestMapping("/gruposxEstudiantes")
 public class GrupoxEstudianteController {
 @Autowired
     private IGrupoxEstudianteService gxeS;
@@ -24,12 +24,29 @@ public class GrupoxEstudianteController {
     }
 
     @GetMapping
-    public List<GrupoxEstudianteDTO> listar() {
+    public List<GrupoxEstudianteDTO> list() {
         return gxeS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, GrupoxEstudianteDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id) { gxeS.delete(id);}
+
+    @GetMapping("/{id}")
+    public GrupoxEstudianteDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m = new ModelMapper();
+        GrupoxEstudianteDTO dto = m.map(gxeS.listId(id), GrupoxEstudianteDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void update(@RequestBody GrupoxEstudianteDTO dto){
+        ModelMapper m = new ModelMapper();
+        GrupoxEstudiante gxe = m.map(dto, GrupoxEstudiante.class);
+        gxeS.insert(gxe);
+    }
+
 
     @PostMapping("/buscar")
     public List<GrupoxEstudianteDTO> buscar(@RequestBody LocalDate fecha) {

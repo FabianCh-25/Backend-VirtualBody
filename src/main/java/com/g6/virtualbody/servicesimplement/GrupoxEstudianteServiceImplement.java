@@ -23,6 +23,14 @@ public class GrupoxEstudianteServiceImplement implements IGrupoxEstudianteServic
     }
 
     @Override
+    public void delete(int idGrupoxEstudiante){
+        gxeR.deleteById(idGrupoxEstudiante);
+    }
+@Override
+public GrupoxEstudiante listId(int idGrupoxEstudiante){
+        return gxeR.findById(idGrupoxEstudiante).orElse(new GrupoxEstudiante());
+}
+    @Override
     public List<GrupoxEstudiante> buscarFecha(LocalDate fecha) {
         return gxeR.findByfechaaceso(fecha);
     }
