@@ -16,7 +16,7 @@ public class Material_Academico {
     @Column(name = "urlarchivo", length = 100, nullable = false)
     private String urlarchivo;
     @ManyToOne
-    @JoinColumn(name = "IdCurso")
+    @JoinColumn(name = "idCurso")
     private Curso curso;
 
     public Material_Academico(int idMaterialacademico, String titulomaterial, String descripcion, String urlarchivo, Curso curso) {

@@ -1,6 +1,8 @@
 package com.g6.virtualbody.controllers;
 
+import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
 import com.g6.virtualbody.dtos.GrupoxEstudianteDTO;
+import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.entities.GrupoxEstudiante;
 import com.g6.virtualbody.services.IGrupoxEstudianteService;
 import org.modelmapper.ModelMapper;
@@ -29,6 +31,21 @@ public class GrupoxEstudianteController {
             ModelMapper m = new ModelMapper();
             return m.map(x, GrupoxEstudianteDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id) { gxeS.delete(id);}
+    @GetMapping("/{id}")
+    public GrupoxEstudianteDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m = new ModelMapper();
+        GrupoxEstudianteDTO dto = m.map(gxeS.listId(id), GrupoxEstudianteDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void update(@RequestBody GrupoxEstudianteDTO dto){
+        ModelMapper m = new ModelMapper();
+        GrupoxEstudiante gp = m.map(dto, GrupoxEstudiante.class);
+        gxeS.insert(gp);
     }
 
     @PostMapping("/buscar")
