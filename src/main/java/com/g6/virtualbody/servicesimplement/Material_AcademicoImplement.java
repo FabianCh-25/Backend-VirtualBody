@@ -23,6 +23,16 @@ public class Material_AcademicoImplement implements IMaterial_AcademicoService {
     }
 
     @Override
+    public void delete(int idMaterialacademico) {
+        maR.deleteById(idMaterialacademico);
+    }
+
+    @Override
+    public Material_Academico listId(int idMaterialacademico) {
+        return maR.findById(idMaterialacademico).orElse(new Material_Academico());
+    }
+
+    @Override
 
     public List<Material_Academico> findbytitulo(String titulomaterial){
         return maR.buscarTitulomaterial(titulomaterial);

@@ -3,12 +3,12 @@ package com.g6.virtualbody.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Material_Academico")
+@Table(name = "materialAcademico")
 public class Material_Academico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Idmaterialacademico;
+    private int idMaterialacademico;
     @Column(name = "titulomaterial", length = 30, nullable = false)
     private String titulomaterial;
     @Column(name = "descripcion", length = 400, nullable = false)
@@ -19,8 +19,8 @@ public class Material_Academico {
     @JoinColumn(name = "IdCurso")
     private Curso curso;
 
-    public Material_Academico(int idmaterialacademico, String titulomaterial, String descripcion, String urlarchivo, Curso curso) {
-        Idmaterialacademico = idmaterialacademico;
+    public Material_Academico(int idMaterialacademico, String titulomaterial, String descripcion, String urlarchivo, Curso curso) {
+        this.idMaterialacademico = idMaterialacademico;
         this.titulomaterial = titulomaterial;
         this.descripcion = descripcion;
         this.urlarchivo = urlarchivo;
@@ -30,11 +30,11 @@ public class Material_Academico {
     public Material_Academico(){}
 
     public int getIdmaterialacademico() {
-        return Idmaterialacademico;
+        return idMaterialacademico;
     }
 
-    public void setIdmaterialacademico(int idmaterialacademico) {
-        Idmaterialacademico = idmaterialacademico;
+    public void setIdmaterialacademico(int idMaterialacademico) {
+        this.idMaterialacademico = idMaterialacademico;
     }
 
     public String getTitulomaterial() {

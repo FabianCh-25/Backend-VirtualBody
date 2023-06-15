@@ -10,6 +10,10 @@ public interface IMaterial_AcademicoService {
 
     List<Material_Academico> list();
 
+    public void delete(int idMaterialacademico);
+
+    public Material_Academico listId(int idMaterialacademico);
+
     List<Material_Academico> findbytitulo(String titulomaterial);
 
     List<Material_Academico> findByCursoId(int curso_id);

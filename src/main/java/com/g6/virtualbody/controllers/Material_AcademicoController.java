@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping( "/material_academico")
+@RequestMapping( "/materialAcademico")
 public class Material_AcademicoController {
     @Autowired
     private IMaterial_AcademicoService maS;
@@ -27,6 +27,21 @@ public class Material_AcademicoController {
             ModelMapper m= new ModelMapper();
             return  m.map(x,Material_AcademicoDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id) { maS.delete(id); }
+    @GetMapping("/{id}")
+    public Material_AcademicoDTO listId(@PathVariable("id")Integer id){
+        ModelMapper m = new ModelMapper();
+        Material_AcademicoDTO dto = m.map(maS.listId(id), Material_AcademicoDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void update(@RequestBody Material_AcademicoDTO dto){
+        ModelMapper m = new ModelMapper();
+        Material_Academico mt = m.map(dto, Material_Academico.class);
+        maS.insert(mt);
     }
 
     @GetMapping("/buscar")

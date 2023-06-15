@@ -6,7 +6,7 @@ import com.g6.virtualbody.entities.Curso;
 
 public class Material_AcademicoDTO {
 
-    private int Idmaterialacademico;
+    private int idMaterialacademico;
 
     private String titulomaterial;
 
@@ -17,11 +17,11 @@ public class Material_AcademicoDTO {
     private Curso curso;
 
     public int getIdmaterialacademico() {
-        return Idmaterialacademico;
+        return idMaterialacademico;
     }
 
-    public void setIdmaterialacademico(int idmaterialacademico) {
-        Idmaterialacademico = idmaterialacademico;
+    public void setIdmaterialacademico(int idMaterialacademico) {
+        this.idMaterialacademico = idMaterialacademico;
     }
 
     public String getTitulomaterial() {

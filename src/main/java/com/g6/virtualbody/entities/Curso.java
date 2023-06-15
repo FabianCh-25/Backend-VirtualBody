@@ -9,7 +9,7 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
-@Column(name = "codeCurso",length = 3,nullable = false)
+@Column(name = "codeCurso",length = 6,nullable = false)
     private String codeCurso;
 @Column(name = "nameCurso",length = 30,nullable = false)
     private String nameCurso;
