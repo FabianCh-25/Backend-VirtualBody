@@ -1,6 +1,7 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.CursoDTO;
+import com.g6.virtualbody.dtos.StudentCourseDTO;
 import com.g6.virtualbody.entities.Curso;
 import com.g6.virtualbody.services.ICursoService;
 import org.modelmapper.ModelMapper;
@@ -46,6 +47,10 @@ public class CursoController {
         Curso c=m.map(dto,Curso.class);
         cs.insert(c);
     }
-
+    @GetMapping("/courses-count")
+    public List<StudentCourseDTO> getStudentsByCourse(){
+        List<StudentCourseDTO> studentCourseDTOs = cs.report01();
+        return studentCourseDTOs; //Andreé
+    }
 
 }
