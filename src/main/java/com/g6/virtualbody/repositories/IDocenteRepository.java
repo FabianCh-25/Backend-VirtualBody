@@ -12,4 +12,9 @@ import java.util.List;
 public interface IDocenteRepository extends JpaRepository<Docente, Integer> {
     @Query("from Docente d where d.nombre=:nombre")
     List<Docente> buscarNombre(@Param("nombre")String nombre);
+    @Query(value = "SELECT d.nombre, COUNT(a.id_aula) from docentes d \n" +
+                "JOIN detalles_matriculas dm ON d.id_docente = dm.id_docente \n" +
+                "JOIN aulas a ON dm.id_aula = a.id_aula \n" +
+                "GROUP BY d.nombre ORDER BY COUNT(d.nombre) DESC", nativeQuery = true)
+    List<String[]> getClassroomByTeacher(); //Andreé
 }

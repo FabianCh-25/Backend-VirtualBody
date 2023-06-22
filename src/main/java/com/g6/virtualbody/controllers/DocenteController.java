@@ -1,5 +1,6 @@
 package com.g6.virtualbody.controllers;
 
+import com.g6.virtualbody.dtos.ClassroomTeacherDTO;
 import com.g6.virtualbody.dtos.DocenteDTO;
 import com.g6.virtualbody.entities.Docente;
 import com.g6.virtualbody.services.IDocenteService;
@@ -51,4 +52,9 @@ public class DocenteController {
             return m.map(x, DocenteDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/teacher-count")
+    public List<ClassroomTeacherDTO> getClassroomByTeacher(){
+        List<ClassroomTeacherDTO> classroomTeacherDTOs = dS.report02();
+        return classroomTeacherDTOs;
+    } //aquí
 }
