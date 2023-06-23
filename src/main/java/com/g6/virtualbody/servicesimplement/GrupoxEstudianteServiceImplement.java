@@ -1,5 +1,6 @@
 package com.g6.virtualbody.servicesimplement;
 
+import com.g6.virtualbody.dtos.GroupStudentDTO;
 import com.g6.virtualbody.entities.GrupoxEstudiante;
 import com.g6.virtualbody.repositories.IGrupoxEstudianteRepository;
 import com.g6.virtualbody.services.IGrupoxEstudianteService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class GrupoxEstudianteServiceImplement implements IGrupoxEstudianteService {
@@ -36,4 +38,21 @@ public class GrupoxEstudianteServiceImplement implements IGrupoxEstudianteServic
     public List<GrupoxEstudiante> buscarFecha(LocalDate fecha) {
         return gxeR.findByfechaaceso(fecha);
     }
+
+    @Override
+    public List<GroupStudentDTO> reporte01() {
+        List<String[]> studentCountByGroup = gxeR.getStudentCountByGroup();
+        List<GroupStudentDTO> groupStudentDTOs = new ArrayList<>();
+
+        for (String[] data : studentCountByGroup) {
+            GroupStudentDTO dto = new GroupStudentDTO();
+            dto.setStudentName(data[0]);
+            dto.setGxeCount(Integer.parseInt(data[1]));
+            groupStudentDTOs.add(dto);
+        }
+
+        return groupStudentDTOs;
+    }
+
+
 }

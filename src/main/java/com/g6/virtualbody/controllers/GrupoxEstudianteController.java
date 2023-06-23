@@ -1,6 +1,7 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
+import com.g6.virtualbody.dtos.GroupStudentDTO;
 import com.g6.virtualbody.dtos.GrupoxEstudianteDTO;
 import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.entities.GrupoxEstudiante;
@@ -56,5 +57,11 @@ public class GrupoxEstudianteController {
         }).collect(Collectors.toList());
 
     }
+    @GetMapping("/student-count")
+    public List<GroupStudentDTO> getStudentCountByGroup() {
+        List<GroupStudentDTO> groupStudentDTOs = gxeS.reporte01();
+        return groupStudentDTOs;
+    }
+
 
 }
