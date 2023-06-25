@@ -10,5 +10,6 @@ public interface IUserService {
     public Integer insert(Users user);
 
     List<Users> list();
+    Users last();
 
 }

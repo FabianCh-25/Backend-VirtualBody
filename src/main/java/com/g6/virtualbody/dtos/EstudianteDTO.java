@@ -1,5 +1,7 @@
 package com.g6.virtualbody.dtos;
 
+import com.g6.virtualbody.entities.Users;
+
 public class EstudianteDTO {
     private int idEstudiante;
     private String nombreEstudiante;
@@ -7,6 +9,8 @@ public class EstudianteDTO {
     private String correoEstudiante;
     private String claveEstudiante;
     private String telefonoEstudiante;
+    private Users users;
+
 
     public int getIdEstudiante() {
         return idEstudiante;
@@ -54,5 +58,13 @@ public class EstudianteDTO {
 
     public void setTelefonoEstudiante(String telefonoEstudiante) {
         this.telefonoEstudiante = telefonoEstudiante;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

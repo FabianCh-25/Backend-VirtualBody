@@ -35,6 +35,11 @@ public class DocenteServiceImplement implements IDocenteService {
     }
 
     @Override
+    public Docente listbyUser(String username) {
+        return dR.listbyUser(username);
+    }
+
+    @Override
     public List<Docente> find(String nombre) {
         return dR.buscarNombre(nombre);    }
 

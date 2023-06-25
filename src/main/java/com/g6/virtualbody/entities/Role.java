@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "roles", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "rol" }) })
-public class Role implements Serializable {
+@Table(name = "roles")
+public class Role {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,20 +23,12 @@ public class Role implements Serializable {
 
     private String rol;
 
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
-    private Users user;
+
 
 
     //GETTERS AND SETTERES
 
-    public Users getUser() {
-        return user;
-    }
 
-    public void setUser(Users user) {
-        this.user = user;
-    }
 
     public Long getId() {
         return id;

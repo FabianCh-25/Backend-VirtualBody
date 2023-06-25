@@ -30,4 +30,9 @@ public class UserServiceImpl implements IUserService {
         // TODO Auto-generated method stub
         return uR.findAll();
     }
+
+    @Override
+    public Users last() {
+        return uR.findFirstByOrderByIdDesc();
+    }
 }

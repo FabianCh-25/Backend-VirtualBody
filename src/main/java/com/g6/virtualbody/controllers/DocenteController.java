@@ -52,6 +52,12 @@ public class DocenteController {
             return m.map(x, DocenteDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/listbyUser/{username}")
+    public DocenteDTO listbyUser(@PathVariable ("username")String username){
+        ModelMapper m=new ModelMapper();
+        DocenteDTO dto=m.map(dS.listbyUser(username),DocenteDTO.class);
+        return dto;
+    }
     @GetMapping("/teacher-count")
     public List<ClassroomTeacherDTO> getClassroomByTeacher(){
         List<ClassroomTeacherDTO> classroomTeacherDTOs = dS.report02();

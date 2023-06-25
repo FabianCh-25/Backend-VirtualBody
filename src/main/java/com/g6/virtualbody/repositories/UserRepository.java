@@ -1,5 +1,6 @@
 package com.g6.virtualbody.repositories;
 
+import com.g6.virtualbody.entities.Role;
 import com.g6.virtualbody.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -22,7 +23,10 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     //INSERTAR ROLES
     @Transactional
     @Modifying
-    @Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
-    public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
+    @Query(value = "UPDATE Users u SET u.role = :role WHERE u.id = :userId")
+    public void insRol(@Param("role") Role role, @Param("userId") Long userId);
+
+    @Query(value = "SELECT * FROM users ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    public Users findFirstByOrderByIdDesc();
 
 }

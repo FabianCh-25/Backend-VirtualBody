@@ -51,4 +51,9 @@ public class EstudianteXActividadController {
         EstudianteXActividad p = m.map(exadto, EstudianteXActividad.class);
         exaS.insert(p);
     }
+    @GetMapping("/aprobados")
+    public List<EstudianteXActividad> report04(){
+        List<EstudianteXActividad> exad=exaS.report04();
+        return exad;
+    }
 }

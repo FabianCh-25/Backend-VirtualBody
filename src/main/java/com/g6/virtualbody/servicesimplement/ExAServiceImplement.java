@@ -1,5 +1,6 @@
 package com.g6.virtualbody.servicesimplement;
 
+import com.g6.virtualbody.dtos.EstudianteXActividadDTO;
 import com.g6.virtualbody.entities.EstudianteXActividad;
 import com.g6.virtualbody.repositories.IExARepository;
 import com.g6.virtualbody.services.IExAService;
@@ -31,4 +32,11 @@ public class ExAServiceImplement implements IExAService {
     public EstudianteXActividad ListID(int idexa) {
         return exaR.findById(idexa).orElse(new EstudianteXActividad());
     }
+
+    @Override
+    public List<EstudianteXActividad> report04() {
+        return exaR.report04();
+    }
+
+
 }

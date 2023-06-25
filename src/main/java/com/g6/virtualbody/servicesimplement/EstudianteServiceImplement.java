@@ -31,4 +31,9 @@ public class EstudianteServiceImplement implements IEstudianteService {
     public Estudiante listId(int idEstudiante) {
         return  eR.findById(idEstudiante).orElse(new Estudiante());
     }
+
+    @Override
+    public Estudiante listbyUser(String username) {
+        return eR.listbyUser(username);
+    }
 }

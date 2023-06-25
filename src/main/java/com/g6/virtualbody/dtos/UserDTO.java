@@ -1,26 +1,15 @@
-package com.g6.virtualbody.entities;
+package com.g6.virtualbody.dtos;
 
-
-import java.io.Serializable;
-import java.util.List;
+import com.g6.virtualbody.entities.Role;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "users")
-public class Users implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
     private Long id;
 
-    @Column(length = 30, unique = true)
     private String username;
-    @Column(length = 200)
     private String password;
     private Boolean enabled;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idRole")
     private Role role;
 
     public Long getId() {

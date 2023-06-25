@@ -1,6 +1,7 @@
 package com.g6.virtualbody.controllers;
 
 import com.g6.virtualbody.dtos.ActividadDTO;
+import com.g6.virtualbody.dtos.ActivityStudentDTO;
 import com.g6.virtualbody.entities.Actividad;
 import com.g6.virtualbody.services.IActividadService;
 import io.swagger.models.Model;
@@ -45,5 +46,10 @@ public class ActividadControler {
         ModelMapper m = new ModelMapper();
         Actividad at= m.map(atdto,Actividad.class);
         atS.insert(at);
+    }
+    @GetMapping("/report03")
+    public List<ActivityStudentDTO> getStudentsByCourse(){
+        List<ActivityStudentDTO> studentCourseDTOs = atS.reporte03();
+        return studentCourseDTOs; //FabianCh
     }
 }

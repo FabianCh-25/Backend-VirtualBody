@@ -10,4 +10,6 @@ public interface IEstudianteService {
     List<Estudiante> list();
     public void delete(int idEstudiante);
     public Estudiante listId (int idEstudiante);
+    public Estudiante listbyUser(String username);
+
 }

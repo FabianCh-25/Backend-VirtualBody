@@ -59,6 +59,29 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/authenticate").permitAll() //.hasAuthority("ADMIN")
+                .antMatchers("/users/last").permitAll()
+                .antMatchers("/users/list").permitAll()
+                .antMatchers("/users/save").permitAll()
+                .antMatchers("/users/insert").permitAll()
+                .antMatchers("/estudiante/insert").permitAll()
+                .antMatchers("/estudiante").permitAll()
+                .antMatchers("/users").permitAll()
+                .antMatchers("/Docentes/insert").permitAll()
+                .antMatchers("/Docentes").permitAll()
+                .antMatchers("/users/listar").permitAll()
+                .antMatchers("/roles").permitAll()
+
+
+
+
+
+
+                .antMatchers("/estudiante/listbyUser/{username}").permitAll()
+                .antMatchers("/Docentes/listbyUser/{username}").permitAll()
+
+                //.antMatchers("/roles").permitAll()
+
+                //
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)

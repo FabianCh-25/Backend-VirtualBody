@@ -22,7 +22,12 @@ public class EstudianteController {
         Estudiante e = m.map(dto, Estudiante.class);
         eS.insert(e);
     }
-
+    @PostMapping("/insert")
+    public void insertnuevo(@RequestBody EstudianteDTO dto){
+        ModelMapper m=new ModelMapper();
+        Estudiante a=m.map(dto, Estudiante.class);
+        eS.insert(a);
+    }
     @GetMapping
     public List<EstudianteDTO> list() {
         return eS.list().stream().map(x -> {
@@ -47,5 +52,11 @@ public class EstudianteController {
         ModelMapper m = new ModelMapper();
         Estudiante e = m.map(dto, Estudiante.class);
         eS.insert(e);
+    }
+    @GetMapping("/listbyUser/{username}")
+    public EstudianteDTO listbyUser(@PathVariable ("username")String username){
+        ModelMapper m=new ModelMapper();
+        EstudianteDTO dto=m.map(eS.listbyUser(username),EstudianteDTO.class);
+        return dto;
     }
 }

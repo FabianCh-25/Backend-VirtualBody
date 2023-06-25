@@ -4,6 +4,7 @@ package com.g6.virtualbody.servicesimplement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.g6.virtualbody.entities.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -42,13 +43,16 @@ public class JwtUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(String.format("User not exists", username));
         }
 
-        List<GrantedAuthority> roles = new ArrayList<>();
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        Role role = user.getRole();
 
-        user.getRoles().forEach(rol -> {
-            roles.add(new SimpleGrantedAuthority(rol.getRol()));
-        });
+        //user.getRoles().forEach(rol -> {
+        //    roles.add(new SimpleGrantedAuthority(rol.getRol()));
+        //});
+        authorities.add(new SimpleGrantedAuthority(role.getRol()));
 
-        UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, roles);
+        //UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, roles);
+        UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, authorities);
 
         return ud;
     }

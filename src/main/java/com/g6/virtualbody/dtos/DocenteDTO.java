@@ -1,5 +1,7 @@
 package com.g6.virtualbody.dtos;
 
+import com.g6.virtualbody.entities.Users;
+
 import javax.persistence.Column;
 
 public class DocenteDTO {
@@ -9,6 +11,8 @@ public class DocenteDTO {
     private String correoDocente;
     private String claveDocente;
     private int telefonoDocente;
+    private Users users;
+
     public int getIdDocente() {
         return idDocente;
     }
@@ -54,5 +58,13 @@ public class DocenteDTO {
 
     public void setTelefonoDocente(int telefonoDocente) {
         this.telefonoDocente = telefonoDocente;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

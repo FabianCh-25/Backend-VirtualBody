@@ -10,6 +10,8 @@ public interface IDocenteService {
     List<Docente> list();
     public void delete(int idDocente);
     public Docente ListId(int idDocente);
+    public Docente listbyUser(String username);
+
     List<Docente> find(String nombre);
     public List<ClassroomTeacherDTO> report02(); //aquí
 }

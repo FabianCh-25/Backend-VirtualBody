@@ -20,18 +20,29 @@ public class Estudiante {
     @Column(name = "telefonoEstudiante", length = 35, nullable = false)
     private String telefonoEstudiante;
 
+    @ManyToOne
+    @JoinColumn(name = "idUser", nullable = false)
+    private Users users;
 
     public Estudiante() {
     }
 
-    public Estudiante(int idEstudiante, String nombreEstudiante, String apellidoEstudiante,
-                      String correoEstudiante, String claveEstudiante, String telefonoEstudiante) {
+    public Estudiante(int idEstudiante, String nombreEstudiante, String apellidoEstudiante, String correoEstudiante, String claveEstudiante, String telefonoEstudiante, Users users) {
         this.idEstudiante = idEstudiante;
         this.nombreEstudiante = nombreEstudiante;
         this.apellidoEstudiante = apellidoEstudiante;
         this.correoEstudiante = correoEstudiante;
         this.claveEstudiante = claveEstudiante;
         this.telefonoEstudiante = telefonoEstudiante;
+        this.users = users;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public int getIdEstudiante() {
