@@ -1,6 +1,5 @@
 package com.g6.virtualbody.services;
 
-import com.g6.virtualbody.dtos.GroupStudentDTO;
 import com.g6.virtualbody.entities.GrupoxEstudiante;
 
 import java.time.LocalDate;
@@ -13,8 +12,5 @@ public interface IGrupoxEstudianteService {
     List<GrupoxEstudiante> list();
     public void delete(int idGrupoxEstudiante);
     public GrupoxEstudiante listId(int idGrupoxEstudiante);
-
     List<GrupoxEstudiante> buscarFecha(LocalDate fecha);
-    public List<GroupStudentDTO> reporte01();
-
 }

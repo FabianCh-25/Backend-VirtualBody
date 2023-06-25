@@ -1,9 +1,6 @@
 package com.g6.virtualbody.controllers;
 
-import com.g6.virtualbody.dtos.DetalleMatriculaDTO;
-import com.g6.virtualbody.dtos.GroupStudentDTO;
 import com.g6.virtualbody.dtos.GrupoxEstudianteDTO;
-import com.g6.virtualbody.entities.DetalleMatricula;
 import com.g6.virtualbody.entities.GrupoxEstudiante;
 import com.g6.virtualbody.services.IGrupoxEstudianteService;
 import org.modelmapper.ModelMapper;
@@ -27,7 +24,7 @@ public class GrupoxEstudianteController {
     }
 
     @GetMapping
-    public List<GrupoxEstudianteDTO> listar() {
+    public List<GrupoxEstudianteDTO> list() {
         return gxeS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, GrupoxEstudianteDTO.class);
@@ -36,6 +33,7 @@ public class GrupoxEstudianteController {
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id")Integer id) { gxeS.delete(id);}
+
     @GetMapping("/{id}")
     public GrupoxEstudianteDTO listId(@PathVariable("id")Integer id){
         ModelMapper m = new ModelMapper();
@@ -45,9 +43,10 @@ public class GrupoxEstudianteController {
     @PutMapping
     public void update(@RequestBody GrupoxEstudianteDTO dto){
         ModelMapper m = new ModelMapper();
-        GrupoxEstudiante gp = m.map(dto, GrupoxEstudiante.class);
-        gxeS.insert(gp);
+        GrupoxEstudiante gxe = m.map(dto, GrupoxEstudiante.class);
+        gxeS.insert(gxe);
     }
+
 
     @PostMapping("/buscar")
     public List<GrupoxEstudianteDTO> buscar(@RequestBody LocalDate fecha) {
@@ -57,11 +56,5 @@ public class GrupoxEstudianteController {
         }).collect(Collectors.toList());
 
     }
-    @GetMapping("/student-count")
-    public List<GroupStudentDTO> getStudentCountByGroup() {
-        List<GroupStudentDTO> groupStudentDTOs = gxeS.reporte01();
-        return groupStudentDTOs;
-    }
-
 
 }
