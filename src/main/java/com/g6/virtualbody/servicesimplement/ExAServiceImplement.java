@@ -34,8 +34,8 @@ public class ExAServiceImplement implements IExAService {
     }
 
     @Override
-    public List<EstudianteXActividad> report04() {
-        return exaR.report04();
+    public List<EstudianteXActividad> report06() {
+        return exaR.report06();
     }
 
 

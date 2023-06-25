@@ -12,5 +12,5 @@ public interface IActividadService {
     List<Actividad>list();
     public void delete(int idActividad);
     Actividad ListId(int idActividad);
-    public List<ActivityStudentDTO> reporte03();
+    public List<ActivityStudentDTO> reporte05();
 }

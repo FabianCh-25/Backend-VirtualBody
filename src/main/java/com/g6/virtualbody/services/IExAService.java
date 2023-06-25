@@ -10,6 +10,6 @@ public interface IExAService {
     List<EstudianteXActividad>list();
     public void delete (int idexa);
     public EstudianteXActividad ListID(int idexa);
-    public List<EstudianteXActividad> report04();//report 04
+    public List<EstudianteXActividad> report06();//report 04
 
 }

@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface IExARepository extends JpaRepository<EstudianteXActividad,Integer> {
     @Query("SELECT exa FROM EstudianteXActividad exa WHERE exa.calificacion > 12")
-    List<EstudianteXActividad> report04();
+    List<EstudianteXActividad> report06();
 //FabianCh
 }

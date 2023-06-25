@@ -36,16 +36,17 @@ public class ActividadServiceImplement implements IActividadService {
     }
 
     @Override
-    public List<ActivityStudentDTO> reporte03() {
-        List<String[]> act_count = atR.getStudentsByActivity();
-        List<ActivityStudentDTO> act_studnt = new ArrayList<>();
+    public List<ActivityStudentDTO> reporte05() {
+        List<String[]> getStudentsByActivity=atR.getStudentsByActivity();
+        List<ActivityStudentDTO> activityStudentDTOS=new ArrayList<>();
+        for (String[] data:getStudentsByActivity){
+            ActivityStudentDTO asd=new ActivityStudentDTO();
+            asd.setActivity(data[0]);
+            asd.setStudentCount(Integer.parseInt(data[1]));
+            activityStudentDTOS.add(asd);
+        }
+        return activityStudentDTOS;
+    }
 
-        for (String[] data : act_count) {
-            ActivityStudentDTO dto = new ActivityStudentDTO();
-            dto.setActivity(data[0]);
-            dto.setStudentCount(Integer.parseInt(data[1]));
-            act_studnt.add(dto);
-        }
-        return act_studnt; //Fabian Ch
-        }
+
 }

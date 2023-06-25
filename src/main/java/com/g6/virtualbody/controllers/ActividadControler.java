@@ -47,9 +47,10 @@ public class ActividadControler {
         Actividad at= m.map(atdto,Actividad.class);
         atS.insert(at);
     }
-    @GetMapping("/report03")
-    public List<ActivityStudentDTO> getStudentsByCourse(){
-        List<ActivityStudentDTO> studentCourseDTOs = atS.reporte03();
-        return studentCourseDTOs; //FabianCh
+    @GetMapping("/report5")
+    public List<ActivityStudentDTO> getStudentsByActivity(){
+        System.out.println("hola");
+        List<ActivityStudentDTO> activityStudentDTOS = atS.reporte05();
+        return activityStudentDTOS; //FabianCh
     }
 }
