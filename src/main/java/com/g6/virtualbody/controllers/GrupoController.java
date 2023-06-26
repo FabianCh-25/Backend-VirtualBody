@@ -54,6 +54,7 @@ public class GrupoController {
     }
     @GetMapping("/group-count")
     public List<GroupStudentDTO> getStudentCountByGroup(){
+        System.out.println(85);
         List<GroupStudentDTO> groupStudentDTOs = gS.report03();
         return groupStudentDTOs;
     }

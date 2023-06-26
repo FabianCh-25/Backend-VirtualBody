@@ -41,14 +41,14 @@ public class GrupoServiceImplement implements IGrupoService {
         List<String[]> studentCountByGroup = gR.getStudentCountByGroup();
         List<GroupStudentDTO> groupStudentDTOs = new ArrayList<>();
 
-        for(String[] data: studentCountByGroup){
+        for (String[] data : studentCountByGroup) {
             GroupStudentDTO dto = new GroupStudentDTO();
-            dto.setStudentName(data[0]);
-            dto.setGxeCount(Integer.parseInt(data[1]));
+            //dto.setId(Integer.parseInt(data[0])); // ID del grupo
+            dto.setStudentName(data[0]); // Nombre del grupo
+            dto.setGxeCount(Integer.parseInt(data[1])); // Cantidad de estudiantes
             groupStudentDTOs.add(dto);
         }
-        return groupStudentDTOs; //aquí
-        }
-
+return groupStudentDTOs;
+    }
 
 }

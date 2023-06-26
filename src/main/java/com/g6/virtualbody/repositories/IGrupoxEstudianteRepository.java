@@ -21,6 +21,8 @@ public interface IGrupoxEstudianteRepository extends JpaRepository<GrupoxEstudia
             "ORDER BY g.id_grupo ASC \n", nativeQuery = true)
     List<String[]> getStudentCountByGroup();
 
+
+
 /* CANTIDAD DE ETUDIANTES QUE HAY POR GRUPO
 
 SELECT g.id_grupo, g.nombre_grupo, COUNT(e.id_estudiante) AS cantidad_estudiantes

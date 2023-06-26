@@ -1,5 +1,7 @@
 package com.g6.virtualbody.controllers;
 
+import com.g6.virtualbody.dtos.CostDTO;
+import com.g6.virtualbody.dtos.GroupStudentDTO;
 import com.g6.virtualbody.dtos.MatriculaDTO;
 import com.g6.virtualbody.entities.Matricula;
 import com.g6.virtualbody.services.IMatriculaService;
@@ -42,4 +44,12 @@ public class MatriculaController {
         Matricula ma = m.map(dto, Matricula.class);
         maS.insert(ma);
     }
+
+    @GetMapping("/cost-count")
+    public List<CostDTO> getCostbyCount(){
+        System.out.println(45);
+        List<CostDTO> costDTOS = maS.report04();
+        return costDTOS;
+    }
+
 }

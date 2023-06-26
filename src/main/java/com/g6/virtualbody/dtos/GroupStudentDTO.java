@@ -4,6 +4,7 @@ public class GroupStudentDTO {
     private String studentName;
     private int gxeCount;
 
+
     public GroupStudentDTO(String studentName, int gxeCount) {
         this.studentName = studentName;
         this.gxeCount = gxeCount;
