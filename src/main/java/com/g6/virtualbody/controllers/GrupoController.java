@@ -6,6 +6,7 @@ import com.g6.virtualbody.services.IGrupoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.g6.virtualbody.dtos.GroupStudentDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,5 +51,10 @@ public class GrupoController {
         ModelMapper m = new ModelMapper();
         Grupo g = m.map(dto, Grupo.class);
         gS.insert(g);
+    }
+    @GetMapping("/group-count")
+    public List<GroupStudentDTO> getStudentCountByGroup(){
+        List<GroupStudentDTO> groupStudentDTOs = gS.report03();
+        return groupStudentDTOs;
     }
 }
